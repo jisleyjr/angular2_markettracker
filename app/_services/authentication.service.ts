@@ -22,8 +22,8 @@ export class AuthenticationService {
         })
 
 //alert(Globals.baseUrl + '/api/authenticate');
-        return this.http.post(Globals.baseUrl + '/api/authenticate', body, { headers: headers })
-        //return this.http.request(new Request(requestoptions))
+        //return this.http.post(Globals.baseUrl + '/api/authenticate', body, { headers: headers })
+        return this.http.request(new Request(requestoptions))
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 if(response.ok) {

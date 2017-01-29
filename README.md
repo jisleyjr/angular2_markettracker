@@ -1,5 +1,5 @@
-# angular2-registration-login-example
+# angular2_martkettracker
 
-Angular 2 User Registration and Login Example & Tutorial
+Personal testing of a Angular 2 site, built using: http://jasonwatmore.com/post/2016/09/29/angular-2-user-registration-and-login-example-tutorial
 
-To see a demo and further details go to http://jasonwatmore.com/post/2016/09/29/angular-2-user-registration-and-login-example-tutorial
+

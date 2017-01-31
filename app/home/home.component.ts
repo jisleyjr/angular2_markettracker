@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
-import { User } from '../_models/index';
-import { UserService } from '../_services/index';
+import { User, ProductMaster } from '../_models/index';
+import { ProductService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
@@ -10,21 +10,21 @@ import { UserService } from '../_services/index';
 
 export class HomeComponent implements OnInit {
     currentUser: User;
-    users: User[] = [];
+    products: ProductMaster[] = [];
 
-    constructor(private userService: UserService) {
+    constructor(private productService: ProductService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
 
     ngOnInit() {
-        this.loadAllUsers();
+        this.loadAllProducts();
     }
 
-    deleteUser(id: number) {
-        this.userService.delete(id).subscribe(() => { this.loadAllUsers() });
-    }
+    //deleteUser(id: number) {
+    //    this.userService.delete(id).subscribe(() => { this.loadAllUsers() });
+    //}
 
-    private loadAllUsers() {
-        this.userService.getAll().subscribe(users => { this.users = users; });
+    private loadAllProducts() {
+        this.productService.getAll().subscribe(p => { this.products = p; });
     }
 }

@@ -27,10 +27,11 @@ export class AuthenticationService {
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 if(response.ok) {
-                    alert(response.json().Result);// toString());
-                    //localStorage.setItem('currentUser', response.toString());
+                    //var jsn = response.json();
+                    //alert(response.json());// toString());
+                    //alert(response.text);
                     let user = new User();
-                    user.token = response.json().Result;
+                    user.token = response.json();
                     localStorage.setItem('currentUser', JSON.stringify(user));
                 } else {
                     alert(response.statusText);

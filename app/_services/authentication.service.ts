@@ -21,7 +21,6 @@ export class AuthenticationService {
             body: JSON.stringify({ username: username, password: password })
         })
 
-//alert(Globals.baseUrl + '/api/authenticate');
         //return this.http.post(Globals.baseUrl + '/api/authenticate', body, { headers: headers })
         return this.http.request(new Request(requestoptions))
             .map((response: Response) => {
